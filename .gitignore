@@ -1,4 +1,8 @@
 # Distribution / packaging
 node_modules
+.env
+cookies.txt
+*.log
+.DS_Store
 
 
