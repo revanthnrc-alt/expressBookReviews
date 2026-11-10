@@ -1,0 +1,25 @@
+$ curl --silent --show-error --fail-with-body --max-time 20 -X PUT -b cookies.txt -H 'Content-Type: application/json' -d '{"review": "An engaging book with memorable characters."}' http://127.0.0.1:5000/customer/auth/review/1
+{
+  "message": "Review successfully added.",
+  "reviews": {
+    "bookstore_student_315a34a8": "An engaging book with memorable characters."
+  }
+}
+
+$ curl --silent --show-error --fail-with-body --max-time 20 http://127.0.0.1:5000/review/1
+{
+  "bookstore_student_315a34a8": "An engaging book with memorable characters."
+}
+
+$ curl --silent --show-error --fail-with-body --max-time 20 -X PUT -b cookies.txt -H 'Content-Type: application/json' -d '{"review": "Updated review: an engaging book with memorable characters and thoughtful themes."}' http://127.0.0.1:5000/customer/auth/review/1
+{
+  "message": "Review successfully updated.",
+  "reviews": {
+    "bookstore_student_315a34a8": "Updated review: an engaging book with memorable characters and thoughtful themes."
+  }
+}
+
+$ curl --silent --show-error --fail-with-body --max-time 20 http://127.0.0.1:5000/review/1
+{
+  "bookstore_student_315a34a8": "Updated review: an engaging book with memorable characters and thoughtful themes."
+}

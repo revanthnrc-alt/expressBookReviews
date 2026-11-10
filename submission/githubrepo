@@ -1,0 +1,15 @@
+$ curl --silent --show-error --fail-with-body --max-time 20 -H 'Accept: application/vnd.github+json' https://api.github.com/repos/revanthnrc-alt/expressBookReviews | python3 -c 'import json,sys; r=json.load(sys.stdin); print(json.dumps({k:r[k] for k in ("full_name","html_url","fork","default_branch")} | {k:{"full_name":r[k]["full_name"],"html_url":r[k]["html_url"]} for k in ("parent","source")}, indent=2))'
+{
+  "full_name": "revanthnrc-alt/expressBookReviews",
+  "html_url": "https://github.com/revanthnrc-alt/expressBookReviews",
+  "fork": true,
+  "default_branch": "main",
+  "parent": {
+    "full_name": "ibm-developer-skills-network/expressBookReviews",
+    "html_url": "https://github.com/ibm-developer-skills-network/expressBookReviews"
+  },
+  "source": {
+    "full_name": "ibm-developer-skills-network/expressBookReviews",
+    "html_url": "https://github.com/ibm-developer-skills-network/expressBookReviews"
+  }
+}

@@ -1,0 +1,5 @@
+$ curl --silent --show-error --fail-with-body --max-time 20 -X POST -H 'Content-Type: application/json' -c cookies.txt -d '{"username": "bookstore_student_315a34a8", "password": "Bookstore-demo-password"}' http://127.0.0.1:5000/customer/login
+{
+  "message": "User successfully logged in.",
+  "username": "bookstore_student_315a34a8"
+}
